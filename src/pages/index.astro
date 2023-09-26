@@ -6,15 +6,21 @@ import headerImage from '@/assets/header.jpg'
 
 <html lang='en'>
   <head>
-    <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
+    <meta charset='utf-8' />
     <meta name='generator' content={Astro.generator} />
     <title>Davi Reis</title>
 
     <style>
       #header-image {
-        clip-path: polygon(0 0, 100% 0, 100% 256px, 0 384px);
+        clip-path: polygon(0 0, 100% 0, 100% 256px, 0 256px);
+      }
+
+      @media screen and (min-width: 1024px) {
+        #header-image {
+          clip-path: polygon(0 0, 100% 0, 100% 256px, 0 384px);
+        }
       }
     </style>
   </head>
@@ -25,7 +31,9 @@ import headerImage from '@/assets/header.jpg'
         <Image id='header-image' class='w-full' src={headerImage} alt='Universe photo' />
       </header>
 
-      <main class='bg-#1D1E20 justify-space-between flex items-center gap-32 rounded-sm px-32 py-16 shadow-lg'>
+      <main
+        class='lg:(bg-#1D1E20 justify-space-between gap-32 px-32 py-16 flex-row shadow-lg) flex-col flex items-center gap-16 rounded-sm'
+      >
         <div class='space-y-6 text-center'>
           <div>
             <Image
@@ -48,7 +56,7 @@ import headerImage from '@/assets/header.jpg'
         </div>
 
         <div class='flex w-min flex-col gap-8'>
-          <p class='inline-flex'>
+          <p class='inline-flex text-center lg:text-left'>
             I'm a 20-years-old Brazilian software developer passionate about the art of solving problems. I'm a
             self-taught that loves pure math, physics and inovative education. My fav language is Rust and I use NixOS
             btw.
