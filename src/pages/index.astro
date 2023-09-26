@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import SocialLink from '@/components/social_link.astro'
+import headerImage from '@/assets/header.jpg'
 ---
 
 <html lang='en'>
@@ -10,10 +11,20 @@ import SocialLink from '@/components/social_link.astro'
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>Davi Reis</title>
+
+    <style>
+      #header-image {
+        clip-path: polygon(0 0, 100% 0, 100% 320px, 0 512px);
+      }
+    </style>
   </head>
 
-  <body class='bg-#18191B text-#AAA font-space-grotesk h-screen w-screen'>
+  <body class='bg-#18191B text-#AAA font-space-grotesk h-screen w-screen overflow-clip'>
     <div class='grid h-full w-full place-items-center'>
+      <header class='-z-1 absolute left-0 top-0 w-full'>
+        <Image id='header-image' class='w-full' src={headerImage} alt='Universe photo' />
+      </header>
+
       <main class='bg-#1D1E20 justify-space-between flex items-center gap-32 rounded-sm px-32 py-16 shadow-lg'>
         <div class='space-y-6 text-center'>
           <div>
