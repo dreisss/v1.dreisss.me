@@ -20,8 +20,6 @@ jobs:
           lfs: true
       - name: Install and setup bun package manager
         uses: oven-sh/setup-bun@v1
-        with:
-          version: 1
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         with:
