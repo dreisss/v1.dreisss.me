@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets'
+import SocialLink from '@/components/social_link.astro'
 ---
 
 <html lang='en'>
@@ -8,9 +9,46 @@
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro</title>
+    <title>Davi Reis</title>
   </head>
-  <body>
-    <h1>Astro</h1>
+
+  <body class='bg-#18191B text-#AAA font-space-grotesk h-screen w-screen'>
+    <div class='grid h-full w-full place-items-center'>
+      <main class='bg-#1D1E20 justify-space-between flex items-center gap-32 rounded-sm px-32 py-16 shadow-lg'>
+        <div class='space-y-6 text-center'>
+          <div>
+            <Image
+              class='h-64 w-64 rounded-full'
+              width={256}
+              height={256}
+              src='https://github.com/dreisss.png'
+              alt='Davi Reis profile photo'
+            />
+          </div>
+
+          <div class='space-y-4'>
+            <h1 class='text-10 font-500'>Davi Reis</h1>
+
+            <h2 class='font-space-mono text-6 inline-flex items-center gap-4'>
+              <div class='ph-map-pin'></div>
+              <span>Brazil</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class='flex w-min flex-col gap-8'>
+          <p class='inline-flex'>
+            I'm a 20-years-old Brazilian software developer who loves the art of solving problems. A self-taught that
+            loves pure math and physics. My fav language is Rust and I use NixOS btw.
+          </p>
+
+          <div class='flex gap-8'>
+            <SocialLink icon='ph-github-logo' text='GitHub' href='https://github.com/dreisss' />
+            <SocialLink icon='prime-discord' text='Discord' href='https://discord.com/users/dreisss' />
+            <SocialLink icon='ph-at' text='Email' href='mailto:dreisss026@gmail.com' />
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

@@ -4,23 +4,22 @@ import {
   presetUno,
   presetWebFonts,
   transformerDirectives,
-  transformerVariantGroup,
-} from "unocss";
+  transformerVariantGroup
+} from 'unocss'
 
 export default defineConfig({
   presets: [
     presetUno(),
     presetIcons({
-      prefix: "",
-      autoInstall: true,
+      prefix: ''
     }),
     presetWebFonts({
-      provider: "google",
+      provider: 'google',
       fonts: {
-        "space-mono": "Space Mono:400",
-        "space-grotesk": "Space Grotesk:400,500",
-      },
-    }),
+        'space-mono': 'Space Mono:400',
+        'space-grotesk': 'Space Grotesk:400,500'
+      }
+    })
   ],
-  transformers: [transformerVariantGroup(), transformerDirectives()],
-});
+  transformers: [transformerVariantGroup(), transformerDirectives()]
+})

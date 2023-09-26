@@ -1,0 +1,8 @@
+---
+const { href, icon, text } = Astro.props
+---
+
+<a href={href} class='border-#AAA flex items-center gap-2 rounded border p-2 px-4' target='_blank'>
+  <div class:list={[icon, 'text-5']}></div>
+  <span>{text}</span>
+</a>
